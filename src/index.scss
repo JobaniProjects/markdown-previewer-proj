@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+$bar-height: 30px;
+$bar-color: #019401;
+$bg-color: yellowgreen;
+// color-scheme 1: bg - yellowgreen | bar - green
+//#4f8b21
+
+@mixin bar-custom ($height, $bg-color, $padding-top, $padding-left){
+    height: $height;
+    background-color: $bg-color;
+    padding-top: $padding-top;
+    padding-left: $padding-left;
+}
+
+@mixin p-e-boxDimensions($width, $height, $bg-color, $resize){
+    width:$width;
+    height: $height;
+    background-color: $bg-color;
+    resize: $resize;
+}
+
+body{
+    background-color:$bg-color;
+    // margin:20px auto;
+}
+
+pre{
+    background-color:#dbdbdb;
+}
+
+footer{
+    margin-top:100px;
+    font-family: Inter;
+    
+}
+
+
+a.name-a{
+    text-decoration: none;
+    color:black;
+}
+
+a.name-a:hover{
+    color:white;
+    transition-duration: .5s;
+}
+
+.bar-title{
+    font-size: 1em;
+    font-family:"Russo One";
+    font-weight:100;
+    margin-left:5px;
+    // color:#e1f3bf;
+}
+
+div.container{
+    // margin:30px auto;
+    margin-top:30px;
+    margin-bottom:20px;
+    
+    
+    h1.title{
+        margin-bottom:40px;
+        font-family: Inter;
+        // color:#e1f3bf;
+    }
+
+    .editor-bar, .previewer-bar{
+        @include bar-custom($bar-height, $bar-color, 2px, 7px);
+        border: 1px solid black;
+        box-shadow: 2px 2px 10px 2px black;
+    }
+
+    textarea{
+        @include p-e-boxDimensions(100%, 350px, #e8e6e6, none);
+        box-sizing: border-box;
+        box-shadow: 2px 2px 10px 2px black;
+    }
+
+    #preview{
+        @include p-e-boxDimensions(100%, 350px, #e8e6e6, none);
+        padding:10px;
+        overflow: auto;
+        box-shadow: 2px 2px 10px 2px black;
+    }
+}
